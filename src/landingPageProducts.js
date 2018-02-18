@@ -48,7 +48,8 @@ class RentalProductsCard extends Component {
 					title="Rental Products"
 					secondaryFooterAction={{
 						content: 'Manage Rental Products',
-						onAction: this.toggleProducts.bind(this, this.productState),
+						//onAction: this.toggleProducts.bind(this, this.productState),
+						url: '/managerentalproducts'
 					}}
 				>
 					<Card.Section>

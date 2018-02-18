@@ -8,7 +8,9 @@ import {
   FormLayout,
   TextField,
   Select,
-  Icon
+  Icon,
+  ResourceList,
+  Thumbnail
 } from "@shopify/polaris";
 
 class manageRentalProducts extends Component {
@@ -24,50 +26,11 @@ class manageRentalProducts extends Component {
         fullWidth={false}
       >
         <Card>
-          <Tabs
-            selected={0}
-            tabs={[
-              {
-                id: "all-customers",
-
-                content: "All",
-
-                accessibilityLabel: "All customers",
-
-                panelID: "all-customers-content"
-              },
-
-              {
-                id: "accepts-marketing",
-
-                content: "Accepts marketing",
-
-                panelID: "accepts-marketing-content"
-              },
-
-              {
-                id: "repeat-customers",
-
-                content: "Repeat customers",
-
-                panelID: "repeat-customers-content"
-              },
-
-              {
-                id: "prospects",
-
-                content: "Prospects",
-
-                panelID: "prospects-content"
-              }
-            ]}
-          />{" "}
+          {this.tabMenu()}
           <Card.Section>{this.searchField()}</Card.Section>
-          <Card.Section>
-            <p>Add Table Header and List below</p>
-          </Card.Section>
+          <Card.Section>{this.productList()}</Card.Section>
+          <Card.Section>Product List should be here</Card.Section>
         </Card>
-        <p>Page content</p>
       </Page>
     );
   }
@@ -87,6 +50,43 @@ class manageRentalProducts extends Component {
           }
         />
       </FormLayout>
+    );
+  }
+
+  tabMenu() {
+    return (
+      <Tabs
+        selected={0}
+        tabs={[
+          {
+            id: "all-customers",
+            content: "All",
+            accessibilityLabel: "All customers",
+            panelID: "all-customers-content"
+          },
+          {
+            id: "accepts-marketing",
+            content: "Accepts marketing",
+            panelID: "accepts-marketing-content"
+          },
+          {
+            id: "repeat-customers",
+            content: "Repeat customers",
+            panelID: "repeat-customers-content"
+          },
+          {
+            id: "prospects",
+            content: "Prospects",
+            panelID: "prospects-content"
+          }
+        ]}
+      />
+    );
+  }
+
+  productList () {
+    return (
+      <ResourceList/>
     );
   }
 }
