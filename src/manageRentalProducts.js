@@ -1,105 +1,94 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 import {
-	Page,
-	Layout,
-	Card,
-	Badge,
-	Tabs,
-	FormLayout,
-	TextField,
-	Select,
-	Icon
-} from '@shopify/polaris';
+  Page,
+  Layout,
+  Card,
+  Badge,
+  Tabs,
+  FormLayout,
+  TextField,
+  Select,
+  Icon
+} from "@shopify/polaris";
 
 class manageRentalProducts extends Component {
-	render () {
-		return (
-			<Page
-				breadcrumbs={[
-					{content: 'Rentify Home', url: '/landing'}
-				]}
-				title="Rental Products"
-				primaryAction={{
-					content: 'Add Rental Product',
-					disabled: false,
-				}}
-				fullWidth={false}
-			>
-				<Card>
-<Tabs
+  render() {
+    return (
+      <Page
+        breadcrumbs={[{ content: "Rentify Home", url: "/landing" }]}
+        title="Rental Products"
+        primaryAction={{
+          content: "Add Rental Product",
+          disabled: false
+        }}
+        fullWidth={false}
+      >
+        <Card>
+          <Tabs
+            selected={0}
+            tabs={[
+              {
+                id: "all-customers",
 
-  selected={0}
+                content: "All",
 
-  tabs={[
+                accessibilityLabel: "All customers",
 
-    {
+                panelID: "all-customers-content"
+              },
 
-      id: 'all-customers',
+              {
+                id: "accepts-marketing",
 
-      content: 'All',
+                content: "Accepts marketing",
 
-      accessibilityLabel: 'All customers',
+                panelID: "accepts-marketing-content"
+              },
 
-      panelID: 'all-customers-content',
+              {
+                id: "repeat-customers",
 
-    },
+                content: "Repeat customers",
 
-    {
+                panelID: "repeat-customers-content"
+              },
 
-      id: 'accepts-marketing',
+              {
+                id: "prospects",
 
-      content: 'Accepts marketing',
+                content: "Prospects",
 
-      panelID: 'accepts-marketing-content',
+                panelID: "prospects-content"
+              }
+            ]}
+          />{" "}
+          <Card.Section>{this.searchField()}</Card.Section>
+          <Card.Section>
+            <p>Add Table Header and List below</p>
+          </Card.Section>
+        </Card>
+        <p>Page content</p>
+      </Page>
+    );
+  }
 
-    },
-
-    {
-
-      id: 'repeat-customers',
-
-      content: 'Repeat customers',
-
-      panelID: 'repeat-customers-content',
-
-    },
-
-    {
-
-      id: 'prospects',
-
-      content: 'Prospects',
-
-      panelID: 'prospects-content',
-
-    },
-
-  ]}
-
-/>					<Card.Section>
-						{this.searchField()}	
-					</Card.Section>
-					<Card.Section>
-						<p>Add Table Header and List below</p>
-					</Card.Section>
-				</Card>
-				<p>Page content</p>
-			</Page>
-		)
-	}
-	
-	searchField () {
-		return (
-			<FormLayout>
-			  <TextField
-				placeholder="Search"
-				prefix={<Icon source="search" disabled />}
-				connectedLeft={<Select label="Unit of time" labelHidden options={['Filter Products']} />}
-			  />
-			</FormLayout>		
-		);
-	}
-	
+  searchField() {
+    return (
+      <FormLayout>
+        <TextField
+          placeholder="Search"
+          prefix={<Icon source="search" disabled />}
+          connectedLeft={
+            <Select
+              label="Unit of time"
+              labelHidden
+              options={["Filter Products"]}
+            />
+          }
+        />
+      </FormLayout>
+    );
+  }
 }
 
 export default manageRentalProducts;
