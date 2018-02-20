@@ -6,6 +6,7 @@ import {
 import samplePage from './App'
 import landingPage from './landingPage'
 import manageRentalProducts from './manageRentalProducts'
+import addProduct from './addProduct'
 
 import { Tabs } from '@shopify/polaris';
 
@@ -21,7 +22,7 @@ const RentifyApp = () => {
 						content: 'Home',
 						panelID: 'home-content',
 						url: '/'
-						
+
 					},
 					{
 						id: 'landing',
@@ -34,8 +35,8 @@ const RentifyApp = () => {
 						content: 'Topics',
 						panelID: 'topic-content',
 						url: '/topics'
-						
-					},					
+
+					},
 				]}
 			/>
 
@@ -43,6 +44,7 @@ const RentifyApp = () => {
 			<Route exact path="/landing" component={landingPage}/>
 			<Route exact path="/topics" component={Topics}/>
 			<Route exact path="/managerentalproducts" component={manageRentalProducts}/>
+			<Route exact path="/addproduct" component={addProduct}/>
 		</div>
 	</Router>;
 }
