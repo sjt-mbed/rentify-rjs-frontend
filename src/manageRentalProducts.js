@@ -3,7 +3,6 @@ import {
   Page,
   Layout,
   Card,
-  Badge,
   Tabs,
   FormLayout,
   TextField,
@@ -11,8 +10,6 @@ import {
   Icon,
   ResourceList,
   TextStyle,
-  List,
-  Stack
 } from "@shopify/polaris";
 
 class manageRentalProducts extends Component {

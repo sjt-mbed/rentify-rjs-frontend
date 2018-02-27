@@ -8,43 +8,29 @@ import landingPage from './landingPage'
 import manageRentalProducts from './manageRentalProducts'
 import addProduct from './addProduct'
 
-import { Tabs } from '@shopify/polaris';
+import {
+	Heading,
+	Subheading,
+	TextContainer,
+	DisplayText,
+	Icon
+} from '@shopify/polaris';
 
 
 const RentifyApp = () => {
 	return <Router>
 		<div>
-			<Tabs
-				selected={1}
-				tabs={[
-					{
-						id: 'home',
-						content: 'Home',
-						panelID: 'home-content',
-						url: '/'
-
-					},
-					{
-						id: 'landing',
-						content: 'Landing',
-						panelID: 'landing-content',
-						url: '/landing',
-					},
-					{
-						id: 'topics',
-						content: 'Topics',
-						panelID: 'topic-content',
-						url: '/topics'
-
-					},
-				]}
-			/>
-
-			<Route exact path="/" component={samplePage}/>
-			<Route exact path="/landing" component={landingPage}/>
-			<Route exact path="/topics" component={Topics}/>
-			<Route exact path="/managerentalproducts" component={manageRentalProducts}/>
-			<Route exact path="/addproduct" component={addProduct}/>
+			{layoutHeader()}
+				{layoutNav()}
+			<article>
+				<Route exact path="/" component={landingPage}/>
+				<Route exact path="/sample" component={samplePage}/>
+				<Route exact path="/landing" component={landingPage}/>
+				<Route exact path="/topics" component={Topics}/>
+				<Route exact path="/managerentalproducts" component={manageRentalProducts}/>
+				<Route exact path="/addproduct" component={addProduct}/>
+			</article>
+			<footer>Aside 1</footer>
 		</div>
 	</Router>;
 }
@@ -55,5 +41,22 @@ const Topics = () => {
 	</div>;
 }
 
+const layoutHeader = () => {
+	return 	<header><DisplayText>Shopify</DisplayText></header>;
+}
+
+const layoutNav = () => {
+	return 	<nav>
+				<ul><TextContainer spacing="loose">
+					<li><Heading>Home</Heading></li>
+					<li><Subheading>Orders</Subheading></li>
+					<li><Heading>Products</Heading></li>
+					<li><Heading>Customers</Heading></li>
+					<li><Heading>Analytics</Heading></li>
+					<li><Heading>Discounts</Heading></li>
+					<li><Heading>Apps</Heading></li>
+				</TextContainer></ul>
+			</nav>;
+}
 
 export default RentifyApp;

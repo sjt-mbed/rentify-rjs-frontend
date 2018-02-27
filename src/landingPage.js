@@ -13,9 +13,10 @@ import ReturnsCard from './landingPageReturns'
 class landingPage extends Component {
 
 	render () {
-		return ( 
-			<Page 
+		return (
+			<Page
 				title="Dashboard"
+				fullwidth={true}
 			>
 				<Layout>
 					<RentalProductsCard/>
