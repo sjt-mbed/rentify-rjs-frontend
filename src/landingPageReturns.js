@@ -13,18 +13,18 @@ class ReturnsCard extends Component {
 			ReturnsState: false,
 		};
 	}
-	
+
 	/* Card that shows state of Product Management */
 	render () {
-		return this.state.ReturnsState 
-		? this.holdsNotEmpty()
-		:this.holdsEmpty();
+		return this.state.ReturnsState
+		? this.returnsNotEmpty()
+		:this.returnsEmpty();
 	}
-	
+
 	toggleProducts(){
 		this.setState(({ReturnsState}) => ({ReturnsState: !ReturnsState}));
 	}
-	holdsEmpty () {
+	returnsEmpty () {
 		return (
 			 <Layout.Section>
 				<Card
@@ -39,10 +39,10 @@ class ReturnsCard extends Component {
 						<p><Badge>No</Badge> orders for dispatch from your store</p>
 					</Card.Section>
 				</Card>
-			 </Layout.Section>			
+			 </Layout.Section>
 		);
 	}
-	holdsNotEmpty () {
+	returnsNotEmpty () {
 		return (
 			 <Layout.Section>
 				<Card
@@ -50,6 +50,7 @@ class ReturnsCard extends Component {
 					secondaryFooterAction={{
 						content: 'Checkin Returns',
 						onAction: this.toggleProducts.bind(this, this.productState),
+						url: '/returns',
 					}}
 				>
 					<Card.Section>
@@ -58,7 +59,7 @@ class ReturnsCard extends Component {
 				</Card>
 			 </Layout.Section>
 		);
-	}	
+	}
 }
 
 export default ReturnsCard;
