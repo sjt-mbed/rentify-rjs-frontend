@@ -23,3 +23,9 @@ In npm enabled shell/command prompt,
 ```sh
 	npm start
 ```
+
+Step 4:
+Open browser and enter url
+```sh
+	http://localhost:3000
+```
