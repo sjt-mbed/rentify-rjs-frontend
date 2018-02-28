@@ -5,13 +5,16 @@ import {
 	Card,
 	DescriptionList,
 	Button,
-	Badge
+	Badge,
+	Icon
 } from '@shopify/polaris';
 
 class returnsManagement extends Component {
 	render () {
 		return (
-		<Page title="Returns">
+		<Page
+			breadcrumbs={[{ content: "Rentify Home", url: "/landing" }]}
+			title="Returns">
 			<Layout>
 			  <Layout.Section>
 				<Card
@@ -40,7 +43,8 @@ class returnsManagement extends Component {
 			  items={[
 				{
 				  term: 'Logistics',
-				  description: <div><Badge>45</Badge><Button>Bellevue</Button></div>
+				  description: <div><Badge>45</Badge><Button icon="circlePlus">Bellevue</Button></div>,
+
 				},
 				{
 				  term: 'Sole proprietorship',

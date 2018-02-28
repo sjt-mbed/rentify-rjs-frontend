@@ -32,7 +32,7 @@ const RentifyApp = () => {
 				<Route exact path="/addproduct" component={addProduct}/>
 				<Route exact path="/returns" component={returnsManagement}/>
 			</article>
-			<footer>Aside 1</footer>
+			<footer>Footer</footer>
 		</div>
 	</Router>;
 }

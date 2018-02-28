@@ -17,6 +17,7 @@ class manageRentalProducts extends Component {
     return (
 
       <Page
+		fullWidth
         breadcrumbs={[{ content: "Rentify Home", url: "/landing" }]}
         title="Rental Products"
         primaryAction={{
@@ -128,7 +129,7 @@ class manageRentalProducts extends Component {
 
 	  };
 	  const tableItemStyle = {
-		  border: '1px solid',
+		  'border-bottom': '1px solid',
 		  'text-align': 'left',
 		  padding: '8px',
 	  };

@@ -15,7 +15,7 @@ class landingPage extends Component {
 	render () {
 		return (
 			<Page
-				title="Dashboard"
+				title="Rentify Dashboard"
 				fullwidth={true}
 			>
 				<Layout>
