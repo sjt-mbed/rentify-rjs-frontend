@@ -9,40 +9,40 @@ class addProduct extends Component {
 	render () {
 		return (
 			<Page
-				breadcrumbs={[{ content: "Rental Products", url: "/manageRentalProducts"}]}
+				breadcrumbs={[{ content: "Add Products", url: "/manageRentalProducts"}]}
 				title="Add Rental Product"
-				fullWidth={false}
+				fullWidth={true}
 			>
 				<Layout>
 				  <Layout.Section>
-					{this.primaryColumn()}
+					{this.addProductPrimaryColumn()}
 				  </Layout.Section>
 				  <Layout.Section secondary>
-					{this.secondaryColumn()}
+					{this.addProductSecondaryColumn()}
 				  </Layout.Section>
 				</Layout>
 			</Page>
 		);
 	}
 
-	primaryColumn () {
+	addProductPrimaryColumn () {
 		return (
 			<Card
-			  title="Order details"
+			  title="Page Placeholder"
 			  sectioned
 			>
-			  <p>View a summary of your order.</p>
+			  <p>This page should be redirected to Shopify's Product List Page</p>
 			</Card>
 		);
 	}
 
-	secondaryColumn () {
+	addProductSecondaryColumn () {
 		return (
 			<Card
-			  title="Tags"
+			  title="None"
 			  sectioned
 			>
-			  <p>Add tags to your order.</p>
+			  <p>Not Applicable</p>
 			</Card>
 		);
 	}

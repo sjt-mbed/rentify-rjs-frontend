@@ -8,6 +8,7 @@ import landingPage from './landingPage'
 import manageRentalProducts from './manageRentalProducts'
 import addProduct from './addProduct'
 import returnsManagement from './returns'
+import chooseProduct from './chooseProduct'
 
 import {
 	Heading,
@@ -31,6 +32,7 @@ const RentifyApp = () => {
 				<Route exact path="/managerentalproducts" component={manageRentalProducts}/>
 				<Route exact path="/addproduct" component={addProduct}/>
 				<Route exact path="/returns" component={returnsManagement}/>
+				<Route exact path="/chooseproduct" component={chooseProduct}/>
 			</article>
 			<footer>Footer</footer>
 		</div>

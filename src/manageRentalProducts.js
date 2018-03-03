@@ -10,6 +10,7 @@ import {
   Icon,
   ResourceList,
   TextStyle,
+  Checkbox
 } from "@shopify/polaris";
 
 class manageRentalProducts extends Component {
@@ -17,15 +18,19 @@ class manageRentalProducts extends Component {
     return (
 
       <Page
-		fullWidth
+		fullWidth={true}
         breadcrumbs={[{ content: "Rentify Home", url: "/landing" }]}
         title="Rental Products"
         primaryAction={{
-          content: "Add Rental Product",
-		  url: '/addproduct',
-          disabled: false
+          content: "Choose Products",
+		  url: '/chooseproduct',
         }}
-        fullWidth={false}
+		secondaryActions={[
+		{
+          content: "Add Products",
+		  url: '/addproduct',
+		}
+		]}
       >
 	   <Layout fullWidth={true}>
 	    <Layout.Section>
@@ -115,13 +120,13 @@ class manageRentalProducts extends Component {
   }
   productListBak () {
 	  const items = [
-		  {id: 1, name: 'Call of Duty', inventory: '45', type: 'Video Game', vendor: 'Activision'},
-		  {id: 2, name: 'War Craft', inventory: '25', type: 'Video Game', vendor: 'Activision'},
-		  {id: 3, name: 'Halo 2', inventory: '15', type: 'Video Game', vendor: 'Microsoft'},
-		  {id: 4, name: 'Assasins Creed', inventory: '28', type: 'Video Game', vendor: 'Mahjong'},
-		  {id: 5, name: 'Minecraft', inventory: '34', type: 'Video Game', vendor: 'Microsoft'},
-		  {id: 6, name: 'Fifa 2018', inventory: '22', type: 'Video Game', vendor: 'Activision'},
-		  {id: 7, name: 'Mario Cart', inventory: '45', type: 'Video Game', vendor: 'Nintendo'},
+		  {id: 1, name: 'Call of Duty', inventory: '45', rate: '4.99', deposit: '55'},
+		  {id: 2, name: 'War Craft', inventory: '25', rate: '3.99', deposit: '50'},
+		  {id: 3, name: 'Halo 2', inventory: '15', rate: '5.99', deposit: '75'},
+		  {id: 4, name: 'Assasins Creed', inventory: '28', rate: '6.49', deposit: '65'},
+		  {id: 5, name: 'Minecraft', inventory: '34', rate: '2.99', deposit: '45'},
+		  {id: 6, name: 'Fifa 2018', inventory: '22', rate: '3.49', deposit: '53'},
+		  {id: 7, name: 'Mario Cart', inventory: '45', rate: '4.29', deposit: '45'},
 	  ];
 	  const tableStyle = {
 		width: '100%',
@@ -135,10 +140,11 @@ class manageRentalProducts extends Component {
 	  };
 	  const productList = items.map((item) =>
 		<tr key={item.id}>
+			<td style={tableItemStyle}><Checkbox/></td>
 			<td style={tableItemStyle}><TextStyle>{item.name}</TextStyle></td>
 			<td style={tableItemStyle}><TextStyle>{item.inventory}</TextStyle></td>
-			<td style={tableItemStyle}><TextStyle>{item.type}</TextStyle></td>
-			<td style={tableItemStyle}><TextStyle>{item.vendor}</TextStyle></td>
+			<td style={tableItemStyle}><TextStyle>$ {item.rate}</TextStyle></td>
+			<td style={tableItemStyle}><TextStyle>$ {item.deposit}</TextStyle></td>
 		</tr>
 	  );
 
@@ -147,10 +153,11 @@ class manageRentalProducts extends Component {
 
 		<table style={tableStyle}>
 			<tr>
+				<th style={tableItemStyle}><Checkbox /></th>
 				<th style={tableItemStyle}><TextStyle>Name</TextStyle></th>
 				<th style={tableItemStyle}><TextStyle>Inventory</TextStyle></th>
-				<th style={tableItemStyle}><TextStyle>Type</TextStyle></th>
-				<th style={tableItemStyle}><TextStyle>Vendor</TextStyle></th>
+				<th style={tableItemStyle}><TextStyle>Weekly Rates</TextStyle></th>
+				<th style={tableItemStyle}><TextStyle>Deposit</TextStyle></th>
 			</tr>
 			<tbody>
 			{productList}
