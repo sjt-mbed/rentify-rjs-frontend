@@ -7,27 +7,28 @@ import {
   FormLayout,
   TextField,
   Select,
-  Icon,
   ResourceList,
   TextStyle,
-  Checkbox
+  Checkbox,
+  Pagination,
+  Icon
 } from "@shopify/polaris";
 
-class manageRentalProducts extends Component {
+class holdsManagement extends Component {
   render() {
     return (
 
       <Page
 		fullWidth={true}
         breadcrumbs={[{ content: "Rentify Home", url: "/landing" }]}
-        title="Rental Products"
+        title="Products Holds"
         primaryAction={{
-          content: "Choose Products",
+          content: "Hold Products",
 		  url: '/chooseproduct',
         }}
 		secondaryActions={[
 		{
-          content: "Add Products",
+          content: "Something Products",
 		  url: '/addproduct',
 		}
 		]}
@@ -37,6 +38,12 @@ class manageRentalProducts extends Component {
         <Card>
           {this.tabMenu()}
           <Card.Section>{this.searchField()}</Card.Section>
+		  	<Pagination
+			  hasPrevious
+			  onPrevious={() => {}}
+			  hasNext
+			  onNext={() => {}}
+		  />
 		  <Card.Section>{this.productListBak()}</Card.Section>
         </Card>
 	   </Layout.Section>
@@ -77,17 +84,17 @@ class manageRentalProducts extends Component {
           },
           {
             id: "new-arrivals",
-            content: "New Arrivals",
+            content: "New",
             panelID: "new-arrivals-content"
           },
           {
             id: "repeat-customers",
-            content: "Books",
+            content: "Most",
             panelID: "repeat-customers-content"
           },
           {
             id: "prospects",
-            content: "Variety",
+            content: "Something else",
             panelID: "prospects-content"
           }
         ]}
@@ -168,4 +175,4 @@ class manageRentalProducts extends Component {
   }
 }
 
-export default manageRentalProducts;
+export default holdsManagement;

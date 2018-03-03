@@ -10,7 +10,7 @@ class chooseProduct extends Component {
 		return (
 			<Page
 				breadcrumbs={[{ content: "Rental Products", url: "/manageRentalProducts"}]}
-				title="Add Rental Product"
+				title="Choose Rental Products"
 				fullWidth={false}
 			>
 				<Layout>
@@ -34,6 +34,7 @@ class chooseProduct extends Component {
 			  <a href="https://polaris.shopify.com/components/embedded/embedded-resource-picker#navigation">
 				<p> Using Embedded Resource Picker reactjs component, this becomes much easier</p>
 			  </a>
+			  <p>The product picker should list products that are not already in the rental product list and allow store owener to select multiple products to be added to rentals</p> 
 			</Card>
 		);
 	}

@@ -13,14 +13,14 @@ class HoldsCard extends Component {
 			holdsState: false,
 		};
 	}
-	
+
 	/* Card that shows state of Product Management */
 	render () {
-		return this.state.holdsState 
+		return this.state.holdsState
 		? this.holdsNotEmpty()
 		:this.holdsEmpty();
 	}
-	
+
 	toggleProducts(){
 		this.setState(({holdsState}) => ({holdsState: !holdsState}));
 	}
@@ -32,14 +32,14 @@ class HoldsCard extends Component {
 					primaryFooterAction={{
 						content: 'Add Orders',
 						/* onAction: this.toggleProducts.bind(this, this.productState), */
-						url: '/topics',
+						url: '/holdsmanagement',
 					}}
 				>
 					<Card.Section>
 						<p><Badge>No</Badge> orders for dispatch from your store</p>
 					</Card.Section>
 				</Card>
-			 </Layout.Section>			
+			 </Layout.Section>
 		);
 	}
 	holdsNotEmpty () {
@@ -58,7 +58,7 @@ class HoldsCard extends Component {
 				</Card>
 			 </Layout.Section>
 		);
-	}	
+	}
 }
 
 export default HoldsCard;
