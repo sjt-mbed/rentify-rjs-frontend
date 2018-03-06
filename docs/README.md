@@ -1,1 +1,0 @@
-Placeholder for deploying React JS app
